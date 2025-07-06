@@ -74,20 +74,20 @@ flutter pub get
 flutter run
 ```
 ### 🎥 Backend Architecture
--Upload Video → AWS S3 Presigned URL
--Notify SQS → Consumer pulls from SQS
--FFmpeg → Transcodes video (ABR: HLS / DASH)
--ECS Tasks → Perform heavy compute (segmentation, thumbnail generation)
--Video Metadata API → FastAPI + PostgreSQL
--Auth → AWS Cognito for signup, login, refresh
+- Upload Video → AWS S3 Presigned URL
+- Notify SQS → Consumer pulls from SQS
+- FFmpeg → Transcodes video (ABR: HLS / DASH)
+- ECS Tasks → Perform heavy compute (segmentation, thumbnail generation)
+- Video Metadata API → FastAPI + PostgreSQL
+- Auth → AWS Cognito for signup, login, refresh
 
 ### 🛡️ Authentication Flow
--AWS Cognito signup/login
--Secure storage using Flutter Secure Storage
--Access + Refresh token system
--Auto-refresh with Bloc state persistence
+- AWS Cognito signup/login
+- Secure storage using Flutter Secure Storage
+- Access + Refresh token system
+- Auto-refresh with Bloc state persistence
 ### 📦 Deployment
--Backend: Dockerized containers deployed to AWS ECS
--Media: Stored in S3 and distributed via CloudFront
--Video Processing: Done in ECS worker containers using FFmpeg
+- Backend: Dockerized containers deployed to AWS ECS
+- Media: Stored in S3 and distributed via CloudFront
+- Video Processing: Done in ECS worker containers using FFmpeg
 
